@@ -55,51 +55,17 @@ AsciiArtify, a startup focused on developing a new software product for transfor
 
 ## ✅ Pros and ❌ Cons
 
-### 🐳 Minikube
+| Aspect        | **Minikube**                                                                                  | **Kind**                                                                                  | **k3d**                                                                                     |
+|---------------|-----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| **✅ Pros**    | - Full upstream Kubernetes<br>- Rich addons (Ingress, Dashboard, Prometheus)<br>- Multiple drivers (Docker, VM, Podman)<br>- Good documentation and community | - Lightweight and fast<br>- Ideal for CI/CD<br>- Pure Docker, no VM overhead<br>- YAML-based config | - Very fast and lightweight<br>- Built-in Traefik Ingress and LoadBalancer<br>- Great CLI and automation<br>- Multi-node support |
+| **❌ Cons**    | - Slower startup with VM<br>- Higher resource usage<br>- Limited Podman support<br>- Not optimal for CI | - Manual Ingress and LoadBalancer setup<br>- No built-in UI<br>- No Podman support<br>- Limited production emulation | - Not full upstream Kubernetes (K3s)<br>- Fewer official addons<br>- Docker dependency<br>- Slight differences vs GKE/EKS |
 
-**✅ Pros:**
-- Full upstream Kubernetes (production parity)
-- Rich addon support (Dashboard, Prometheus, Ingress, Metrics Server)
-- Multiple drivers: Docker, VirtualBox, Hyper-V, KVM, VMware
-- Good community support and documentation
-- Supports resource profiles and snapshots
+## Demonstration
+Recommended Tool: k3d  Deployment of "Hello World" Application on Kubernetes  
 
-**❌ Cons:**
-- Slower startup time, especially with VM-based drivers
-- Higher resource usage compared to k3d and kind
-- Limited/experimental Podman support
-- Not optimal for CI/CD pipelines
+![Application on Kubernetes](demo.gif)  
 
----
 
-### 🐋 Kind (Kubernetes IN Docker)
+## Conclusion
 
-**✅ Pros:**
-- Very lightweight and fast
-- Excellent for CI/CD and ephemeral clusters
-- Pure Docker, no VM overhead
-- Declarative YAML-based configuration
-- Easy scripting and automation integration
-
-**❌ Cons:**
-- No built-in dashboard or monitoring tools
-- Manual setup required for Ingress and LoadBalancer
-- Not compatible with Podman
-- Not ideal for simulating full production environments
-
----
-
-### ⚡ k3d (K3s in Docker)
-
-**✅ Pros:**
-- Extremely fast and low resource usage
-- Built-in Traefik Ingress and load balancer
-- Multi-node cluster support
-- Great CLI experience and YAML automation
-- Suitable for IoT and edge-like environments
-
-**❌ Cons:**
-- Based on K3s (not full Kubernetes; some differences like containerd-only runtime)
-- Fewer official addons; monitoring must be added manually
-- Depends on Docker (limited Podman compatibility)
-- Slight behavior differences from standard GKE/EKS deployments
+We recommend **k3d** as the most suitable tool for the AsciiArtify PoC due to its fast startup, low resource usage, and built-in support for Ingress and load balancing via Traefik. It offers a simple CLI, supports multi-node clusters, and is easy to automate with YAML configurations. While k3d runs on K3s (a lightweight Kubernetes variant), it is fully compatible for development and testing purposes. The only caveat is its reliance on Docker, which may need reconsideration in production. Overall, k3d strikes the best balance between speed, usability, and functionality for local Kubernetes development.
