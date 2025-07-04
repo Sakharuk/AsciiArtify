@@ -2,6 +2,5 @@
 
 ## Demo
 
-<video controls width="640">
-  <source src="./img/demo.mp4" type="video/mp4">
-</video>
+[▶️ Watch demo video](./img/demo.mp4)
+
