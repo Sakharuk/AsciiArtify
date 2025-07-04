@@ -118,7 +118,7 @@ Applications configured in ArgoCD will now be auto-deployed and updated in Kuber
 - Sync Options: `Auto-create namespace`
 ![+ NEW APP](img/Argo03.jpg)  
 - In `SOURCE` section we choose `GIT`
-- Repo URL: `https://github.com/vit-um/go-demo-app`
+- Repo URL: `https://github.com/den-vasyliev/go-demo-app`
 - `Path`: `helm`  
 ![helm](img/Argo04.jpg)  
 - `DESTINATION` section select local cluster `url` and `Namespace` demo. ArgoCD will automatically detect the application parameters using the manifests located in the repository. If you wish to override values manually, you can do so in the `PARAMETERS` section.  
