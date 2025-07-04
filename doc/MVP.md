@@ -2,5 +2,5 @@
 
 ## Demo
 
-[▶️ Watch demo video](./img/demo.mp4)
+![Demo](img/demomvp.gif) 
 
