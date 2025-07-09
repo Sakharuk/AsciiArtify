@@ -2,7 +2,7 @@
 
 # Validate input arguments
 if [ "$#" -ne 2 ]; then
-  echo "Usage: $0 <namespace> <resource_type (e.g., pod, node)>"
+  echo "Usage: $0 <resource_type (e.g., pod, node)> <namespace> "
   exit 1
 fi
 
